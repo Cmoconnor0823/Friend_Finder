@@ -6,7 +6,7 @@ module.exports = function(app) {
 // now the get request for all friend data
 app.get("/api/friends", function(req, res) {
     res.json(friendsArr);
-})
+});
 
 
-}
+};
