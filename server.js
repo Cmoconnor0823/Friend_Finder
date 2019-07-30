@@ -15,10 +15,11 @@ app.use(express.json());
 
 
 // require the route files
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes")(app);
 
 // add in the port listener
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
+    console.log("http://localhost:" + PORT);
   });
