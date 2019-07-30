@@ -1,7 +1,7 @@
 // Enter requirements / dependencies here
 
 var express = require("express");
-var path = require("path");
+//var path = require("path"); moved this to html routes pafe
 
 var app = express();
 
