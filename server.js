@@ -6,6 +6,7 @@ var path = require("path");
 var app = express();
 
 // this sets the initial port.. should I be setting this or heroku?
+//answered using process.env.PORT allows heroku to choose and || says or use this port
 var PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing--taken from in class assingment week 13 day 3 act 16  
