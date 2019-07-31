@@ -1,12 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <title>Friend Finder Survey</title>
 </head>
+
 <body>
-    
+    <div class="container" id="bg">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center">Find Your New Best Friend!</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-center">
+                <a href="/"><button type="button" class="btn btn-lg btn-success"> Home</button></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Enter your name, a picture , and how well the statements below describe you.</h2>
+                    </div>
+                    <div class="card-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="picture">Picture</label>
+                                <input type="text" class="form-control" id="picture"
+                                    placeholder="Please include a picture of yourself, or a picture you connect with.">
+                            </div>
+                            <!-- Question 1 -->
+                            <div class="form-group">
+                                <label for="question-one">1. You tend to spend your free time alone.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-one">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 2 -->
+                            <div class="form-group">
+                                <label for="question-two">2. You like playing Outdoors.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-two">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 3 -->
+                            <div class="form-group">
+                                <label for="question-three">3. You see your Family often.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-three">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 4 -->
+                            <div class="form-group">
+                                <label for="question-four">4. You tend to be the "Advice-Giver" in a group.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-four">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 5 -->
+                            <div class="form-group">
+                                <label for="question-five">5. You have at least one pet.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-five">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 6 -->
+                            <div class="form-group">
+                                <label for="question-six">6. You're curious.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-six">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 7 -->
+                            <div class="form-group">
+                                <label for="question-seven">7. You are fond of Classical Music.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-seven">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 8 -->
+                            <div class="form-group">
+                                <label for="question-eight">8. You have lost track of how many books you
+                                    own.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-eight">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+                            <!-- Question 9 -->
+                            <div class="form-group">
+                                <label for="question-nine">9. You enjoy learning about science and
+                                    space.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-nine">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+
+                            </div>
+                            <!-- Question 10 -->
+                            <div class="form-group">
+                                <label for="question-ten">10. You enjoy watching the sun set.</label>
+                                <select data-placeholder="" class="chosen-select" id="question-ten">
+                                    <option value=""></option>
+                                    <option value="1">1 (Sounds like me)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Not like me)</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-info submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p> copywrite 2019 </p>
+        </div>
+    </footer>
 </body>
+
+
 </html>
