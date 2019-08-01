@@ -12,7 +12,7 @@ var friendsArr = [
     },
     {
         userName: "Bob Ross",
-        userPhoto: "https://upload.wikimedia.org/wikipedia/commons/1/15/LeVar_Burton.png",
+        userPhoto: "https://upload.wikimedia.org/wikipedia/en/7/70/Bob_at_Easel.jpg",
         userScores: [5, 4, 3, 2, 5, 1, 2, 3, 2, 1]
     }
 
