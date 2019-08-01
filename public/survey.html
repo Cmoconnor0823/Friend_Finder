@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <!--Additional j query-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
     <title>Friend Finder Survey</title>
 </head>
@@ -44,7 +45,7 @@
                         <h2>Enter your name, a picture , and how well the statements below describe you.</h2>
                     </div>
                     <div class="card-body">
-                        <form role="form">
+                        <form id="submitForm" role="form">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" id="name">
@@ -210,6 +211,71 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/script.js"></script>
+<script>
+
+    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+    $.ajax({
+        url: "/api/friends",
+        method: "GET"
+    })
+        .then(function (friends) {
+            // Here we then log the tableData to console, where it will show up as an object.
+            console.log(friends);
+            console.log("------------------------------------");
+
+            $('#submitForm').on('submit', function (event) {
+                event.preventDefault();
+                console.log("made it to on click");
+
+                //now validate to ensure all needed questions are answered
+                function validate() {
+                    var trueValid = true;
+                    $('.form-control').each(function () {
+                        if ($(this).val() === '') {
+                            trueValid = false;
+                        }
+                    });
+                    return trueValid;
+                }
+                if (validate() === true) {
+                    var newFriend = {
+                        name: $('#name').val().trim(),
+                        picture: $('#picture').val().trim(),
+                        scores: [
+                            Number($('#question-one').val().trim()),
+                            Number($('#question-two').val().trim()),
+                            Number($('#question-three').val().trim()),
+                            Number($('#question-four').val().trim()),
+                            Number($('#question-five').val().trim()),
+                            Number($('#question-six').val().trim()),
+                            Number($('#question-seven').val().trim()),
+                            Number($('#question-eight').val().trim()),
+                            Number($('#question-nine').val().trim()),
+                            Number($('#question-ten').val().trim())
+                        ]
+                    };
+                    console.log("new friend" + newFriend);
+
+                    //now create a post call to add in the new friend to the friendsArr 
+                    var URL = window.location.origin;
+                    $.post(URL + '/api/friends', newFriend,
+                        //this displays the match data to the modal
+                        function (data) {
+                            $('#matchName').text(data.name);
+                            $('#matchPic').attr('src', data.picture);
+                            $('#resultsModal').modal('toggle')
+                            console.log(data.name);
+                            $('#name').val('');
+                            $('#picture').val('');
+                            $('.chosen-select').val('');
+                        }).then;
+                } else alert('Missing Entry Please Review your Answers, and Complete all Fields.');
+            });
+        });
+    
+
+    // friendsQuery();
+
+</script>
 
 </html>

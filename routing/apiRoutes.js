@@ -6,11 +6,11 @@ module.exports = function(app) {
 // now the get request for all friend data
 app.get("/api/friends", function(req, res) {
     res.json(friendsArr);
+    console.log("friends array get 1 api routes" + friendsArr);
 });
 
 //Api Post request
-//This code will take in the survey data and compare it to the 
-//data in the friends array
+
 app.post("/api/friends", function(req, res) {
     friendsArr.push(req.body);
     //var grabbing current user's score
@@ -43,5 +43,6 @@ app.post("/api/friends", function(req, res) {
     }
 
     res.send(friendsArr[matchFriend]);
+    console.log("match friend" + matchFriend);
 });
 };
