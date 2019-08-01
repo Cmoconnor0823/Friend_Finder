@@ -257,8 +257,8 @@
                     console.log("new friend" + newFriend);
 
                     //now create a post call to add in the new friend to the friendsArr 
-                    var URL = window.location.origin;
-                    $.post(URL + '/api/friends', newFriend,
+                    //var URL = window.location.origin;
+                    $.post('/api/friends', newFriend,
                         //this displays the match data to the modal
                         function (data) {
                             $('#matchName').text(data.name);

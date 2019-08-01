@@ -6,6 +6,7 @@ module.exports = function(app) {
 // now the get request for all friend data
 app.get("/api/friends", function(req, res) {
     res.json(friendsArr);
+    //the friends array is returning as a [object object]
     console.log("friends array get 1 api routes" + friendsArr);
 });
 
@@ -19,13 +20,14 @@ app.post("/api/friends", function(req, res) {
     var matchFriend = 0;
     //this sets the worst possible score
     var lowestDiff = 50;
-
+    console.log(friendsArr)
     //Now call in the data from the Friends array and run the score 
     // through each friend and then compare scores
     for (var i = 0; i < (friendsArr.length -1); i++) {
         //create a var to compare score
-        var compareScore = friendsArr[i].scores;
+        var compareScore = friendsArr[i].userScores;
         var totalDiff = 0;
+        console.log("compare score" + compareScore);
 
         //Now compare the score for each friend in the data
         for (var j = 0; j < friendScore.length; j++) {
