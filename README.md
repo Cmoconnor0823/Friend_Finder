@@ -1,7 +1,7 @@
 # Friend_Finder
 
 <h1>Description</h1>
-A simple app to demonstrate the use of 
+A simple app to demonstrate the use of express servers, with node and javaScript. Simmilar to many dating apps, this Full-Stack site ake in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
 <h2>Set up</h2>
 In order to run this application you will need to run the npm install command, in the file destination in console log. This should install the npm 
