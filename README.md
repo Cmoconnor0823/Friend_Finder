@@ -21,9 +21,9 @@ To run the application locally  please follow the steps below:
 
 ![Image of Site Home Page](/public/images/Friend_home.png)
 <br>
-![Image of Site Survey](/images/Friend_main.png)
+![Image of Site Survey](public/images/Friend_main.png)
 <br>
-![Image of Site Result Modal](images/Friend_result.png)
+![Image of Site Result Modal](public/images/Friend_result.png)
 <br>
 
 
