@@ -19,11 +19,11 @@ To run the application locally  please follow the steps below:
 <h3>Finding Friends</h3>
 <h6>When the application is loaded you will be taken to the home page. From here click on the button to be directed to the survey page. Fill out the survey making sure to complete all fields. When the survey is complete click submit and a modal will pop up with your closest match. Feel free to enter however many friends you would like.</h6>
 
-![Image of Site Home Page](public/images/Friend_home.png)
+![Image of Site Home Page](/public/images/Friend_home.png)
 <br>
-![Image of Site Survey](public/images/Friend_main.png)
+![Image of Site Survey](/images/Friend_main.png)
 <br>
-![Image of Site Result Modal](public/images/Friend_result.png)
+![Image of Site Result Modal](images/Friend_result.png)
 <br>
 
 
